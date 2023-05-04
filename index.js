@@ -131,11 +131,12 @@ function CemberinAlani(çemberinYarıçapı,pi){
 	
 	//3f çözümü
 	
-const nesne=[{sayi : 5000000000000, tekrar : -1}];
+
 	
 let newArray;
 let searchIndex;
 let obj;
+let nesne=[];
 
 	for(let i in sayilar){
 		newArray =nesne.filter(function (el)
