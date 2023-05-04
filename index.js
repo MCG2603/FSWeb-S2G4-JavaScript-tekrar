@@ -29,8 +29,9 @@ function KareninAlani(kenaruzunlugu){
 			4. Hesaplanan çemberin çevresi döndürülecektir.
 		*/
 
-function CemberinCevresi(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinCevresi(çemberinYarıçapı){
+	return pi*2*çemberinYarıçapı;
+	
 }
 
 
@@ -42,13 +43,14 @@ function CemberinCevresi(/* kodlar buraya */){
 /* 	GÖREV 2:  
 		- CemberinAlani fonksiyonunu kullanarak aşağıdaki yönergeleri uygulayın:
 			1. Argüman olarak çemberin yarıçapını BİRİNCİ parametre olacak alacaktır. 
-			2. Global değişken olarak verilmiş pi sayısını fonksiyonun İKİNCİ parametresi olacak alacaktır.
+			2. Global değişken olarak verilmiş pi sayısını fonksiyonun İKİNCİ
+			 parametresi olacak alacaktır.
 			3. Çemberin alanı hesaplanacaktır (💡 İPUCU: Çemberin alanı = pi * yarıçapın karesi, yarıçapın karesini bulmak için Javascript içinde tanımlı Math kütüphanesini kullanabilirsiniz. Math.pow(yaricap,2))
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 		
-function CemberinAlani(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinAlani(çemberinYarıçapı,pi){
+	return pi*Math.pow(çemberinYarıçapı,2);
 }
 
 
@@ -75,41 +77,94 @@ function CemberinAlani(/* kodlar buraya */){
 
 	var ucetambolunenler, enkucuk, enbuyuk, ucebolunenlerintoplami, besyuzdenkucuksayilar, siralisayilar, tekraredensayilar;
 	
-	//3a çözümü
-
-	/* kodlar buraya */
+	
+	function bul(sayilar){
+		enbuyuk=0;
+	    enkucuk=100000;
+		const array=[]
+	  for(let i in sayilar){
+		if (enbuyuk<sayilar[i])
+		    enbuyuk=sayilar[i]
+	
+	    if (enkucuk>sayilar[i])
+	        enkucuk=sayilar[i]
+}
+      array.push(enbuyuk);
+	  array.push(enkucuk);
+	  return array;
+}
+     
+	 enbuyuk=bul(sayilar)[0];
+	 enkucuk=bul(sayilar)[1];   
 	
 	
 	
 	// 3b çözümü:
-
-	/* kodlar buraya */
-		
-		
-		
+    const sayilar1=sayilar;  
+	let ucebolunenlerintoplami1=[];
+	sayilar1.forEach(myFunction);
+	function myFunction(item) {
+		if(item%3==0){
+			ucebolunenlerintoplami1.push(item);
+	  } 
+	}
+	  
+	  ucetambolunenler=ucebolunenlerintoplami1;
 	//3c çözümü:
 	
-	/* kodlar buraya */
-
+	
+	ucebolunenlerintoplami=ucetambolunenler.reduce( (total,ucebölüneneler) => {
+		return total + ucebölüneneler;
+	}, 0 );
 	
 	
 	//3d çözümü
 	
-	/* kodlar buraya */
+	besyuzdenkucuksayilar=sayilar.filter(sayi=> sayi<500);
 
 
 
 	//3e çözümü
 
-	/* kodlar buraya */
+	siralisayilar=besyuzdenkucuksayilar.sort(function(a, b){return a - b});
 	
 	
 	//3f çözümü
 	
-	/* kodlar buraya */
+const nesne=[{sayi : 5000000000000, tekrar : -1}];
+	
+let newArray;
+let searchIndex;
+let obj;
+
+	for(let i in sayilar){
+		newArray =nesne.filter(function (el)
+{
+  return el.sayi ==sayilar[i];
+}
+);
+
+		if(newArray.length>0){
+		
+			searchIndex=nesne.findIndex((nes) => nes.sayi==sayilar[i]);
+			nesne[searchIndex].tekrar=nesne[searchIndex].tekrar+1
+			
+    
+		} else{
+	        obj={ sayi: sayilar[i], tekrar : 1};
+			nesne.push(obj);
+	
+		}
+		  
 
 
+	}
+	tekraredensayilar=[];
+	for(let i in nesne){
 
+		tekraredensayilar.push(nesne[i].sayi+" sayısı "+nesne[i].tekrar+" kere tekrar edilmiştir")
+	}
+	console.log(tekraredensayilar);
 
 	
 		
